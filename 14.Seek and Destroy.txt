@@ -1,0 +1,12 @@
+
+function destroyer(arr) {
+  // Remove all the values
+  var args = Array.from(arguments).slice(1);
+  return arr.filter(function(val){
+  	return !args.includes(val);
+  });
+}
+
+destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3);
+
+//我们将arguments这种类型的对象称之为ArrayLike,为了将其转换为数组对象，以前我们这样干Array.prototype.slice.call(arguments), es6中我们可以这么干Array.from()。

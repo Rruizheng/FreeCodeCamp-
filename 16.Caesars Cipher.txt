@@ -1,0 +1,23 @@
+function rot13(str) { // LBH QVQ VG!
+  var len=str.length;
+  var arr = str.split("");
+  var regEx = /[A-Z]/;
+  var char;
+  for(var i=0;i<len;i++){
+  if(regEx.test(arr[i])){
+        char = str.charCodeAt(i);
+        if(65<=char&&char<=77){
+          char = char+13;
+        }else if(78<=char&&char<=90){
+          char = char - 13;
+        }
+       arr[i] = String.fromCharCode(char);
+   }
+  }
+  return arr.join(""); 
+}
+
+// Change the inputs below to test
+rot13("SERR PBQR PNZC");
+
+//数组个特定位置替换，字符串自能全部替换或部分替换满足条件的字符，所以要先转成数组再进行操作。
